@@ -1,22 +1,55 @@
 .app {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
-  padding: 24px;
-  font-family: system-ui, sans-serif;
+  padding: 0 24px 48px;
 }
 
-.app h1 { text-align: center; color: #1b5e20; }
+.app h1 {
+  margin: 0 0 24px;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  border-radius: 0 0 28px 28px;
+  border-bottom: 5px solid var(--gold);
+  box-shadow: 0 8px 20px rgba(20, 83, 45, 0.25);
+}
 
 .cart-message {
+  width: fit-content;
+  margin: 0 auto 32px;
+  padding: 12px 24px;
   text-align: center;
-  background: #f1f8e9;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 24px;
+  font-weight: 500;
+  color: var(--muted);
+  background: #fff;
+  border: 2px dashed #cbd5d0;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.cart-message::before {
+  content: "🛒 ";
+}
+
+.cart-message.has-items {
+  color: var(--green-dark);
+  background: var(--green-light);
+  border: 2px solid var(--green);
+  box-shadow: 0 4px 12px rgba(31, 138, 76, 0.2);
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 480px) {
+  .app h1 {
+    font-size: 1.7rem;
+    padding: 28px 16px;
+  }
 }
